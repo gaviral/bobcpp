@@ -1,0 +1,85 @@
+dictate_text:
+#  type: cli
+#  command: "shortcuts run dictate_text"
+  type: applescript
+  command: "tell application \"Shortcuts\" to run shortcut named \"dictate_text\""
+  phrases:
+    - dictate
+    - dictate text
+    - dictate something
+    - dictate a message
+
+open_chatGPT:
+  type: cli
+  command: "open https://chat.openai.com/"
+  phrases:
+    - open chatGPT
+    - open chat GPT
+    - open chat GPT website
+    - open chat GPT in browser
+
+wait_2_sec:
+  type: cli
+  command: "sleep 2"
+  phrases:
+    - wait 2 seconds
+    - wait for 2 seconds
+    - wait for 2 sec
+
+paste_text:
+  type: key_press
+  command: "tell application \"System Events\" to keystroke \"v\" using command down"
+  phrases:
+    - paste
+    - paste text
+    - paste the text
+
+press_enter:
+  type: key_press
+  command: "tell application \"System Events\" to key code 36"
+  phrases:
+    - press enter
+    - hit enter
+    - press the enter key
+
+press_cmd_enter:
+  type: key_press
+  command: "tell application \"System Events\" to key code 36 using command down"
+  phrases:
+    - press enter
+    - hit enter
+    - press the enter key
+
+query_chatGPT:
+  type: chain
+  command: dictate_text | open_chatGPT | wait_2_sec | paste_text | press_cmd_enter
+  phrases:
+    - query chatGPT
+    - query chat GPT
+    - ask chatGPT
+    - ask chat GPT
+    - ask chat GPT a question
+
+dictate_text_and_paste:
+  type: chain
+  command: dictate_text | paste_text
+  phrases:
+    - dictate and paste
+    - dictate and paste the text
+    - dictate and paste the message
+
+listen_for_commands:
+  type: listen
+  command: "tell application \"Shortcuts\" to run shortcut named \"listen_for_commands\""
+  phrases:
+    - listen for commands
+    - listen for voice commands
+    - listen for voice commands and execute
+
+exit_program:
+  type: exit
+  phrases:
+    - exit
+    - quit
+    - terminate
+    - close
