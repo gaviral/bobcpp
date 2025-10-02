@@ -4,4 +4,5 @@ project(bobcpp)
 set(CMAKE_CXX_STANDARD 26)
 
 add_executable(bobcpp main.cpp
-        command_maps.h)
+        SystemCommands.cpp
+        SystemCommands.h)
